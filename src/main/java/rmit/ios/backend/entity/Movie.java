@@ -43,8 +43,8 @@ public class Movie {
     )
     private List<Cast> castList;
 
-    public Movie(String movieName, String publishedDate, String categories, String youtubeID, String imageName, double rating, String description, String creator, List<Cast> castList) {
-        this.title = movieName;
+    public Movie(String title, String publishedDate, String categories, String youtubeID, String imageName, double rating, String description, String creator, List<Cast> castList) {
+        this.title = title;
         this.publishedDate = publishedDate;
         this.categories = categories;
         this.youtubeID = youtubeID;

@@ -14,7 +14,7 @@ import java.util.Set;
 @Repository
 @Transactional(readOnly= true)
 public interface MovieRepository extends JpaRepository<Movie,Long> {
-    @Query("SELECT m FROM Movie m WHERE m.movieName =?1")
+    @Query("SELECT m FROM Movie m WHERE m.title =?1")
     Optional<Movie> findByMovieName(String movieName);
     @Query("SELECT m FROM Movie m JOIN FETCH m.castList")
     Set<Movie> getAll();
