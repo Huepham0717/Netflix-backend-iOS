@@ -27,7 +27,7 @@ public class Movie {
             generator = "movie_sequence"
     )
     private Long movieId;
-    private String movieName;
+    private String title;
     private String publishedDate;
     private String categories;
     private String youtubeID;
@@ -44,7 +44,7 @@ public class Movie {
     private List<Cast> castList;
 
     public Movie(String movieName, String publishedDate, String categories, String youtubeID, String imageName, double rating, String description, String creator, List<Cast> castList) {
-        this.movieName = movieName;
+        this.title = movieName;
         this.publishedDate = publishedDate;
         this.categories = categories;
         this.youtubeID = youtubeID;
