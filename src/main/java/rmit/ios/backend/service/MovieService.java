@@ -8,13 +8,14 @@ import rmit.ios.backend.entity.Movie;
 import rmit.ios.backend.repository.MovieRepository;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @AllArgsConstructor
 public class MovieService {
     @Autowired
     private MovieRepository movieRepository;
-    public List<Movie> getMovies() {
+    public Set<Movie> getMovies() {
         return movieRepository.getAll();
     }
 }

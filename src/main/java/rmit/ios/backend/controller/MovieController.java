@@ -10,6 +10,7 @@ import rmit.ios.backend.service.UserService;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @CrossOrigin
 @RestController
@@ -27,7 +28,7 @@ public class MovieController {
     }
 
     @GetMapping
-    public List<Movie> getMovies(){
+    public Set<Movie> getMovies(){
         return movieService.getMovies();
     }
 
