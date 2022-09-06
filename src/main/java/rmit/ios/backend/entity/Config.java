@@ -19,7 +19,7 @@ public class Config {
             Cast cast = new Cast ("Sofia Carson");
             Cast cast1 = new Cast ("Nicholas Galitzine");
             castRepository.saveAll(List.of(cast,cast1));
-            Movie movie = new Movie("Purple Hearts","July 29, 2022","Drama","WTLgg8oRSBE","Purple-Hearts",6.7,"In spite of their many differences, Cassie, a struggling singer-songwriter, and Luke, a troubled Marine, agree to marry solely for military benefits. But when tragedy strikes, the line between real and pretend begins to blur.","\n" +
+            Movie movie = new Movie("Purple Hearts","July 29, 2022","Drama","WTLgg8oRSBE","Purple-Hearts",6.7,"In spite of their many differences, Cassie, a struggling singer-songwriter, and Luke, a troubled Marine, agree to marry solely for military benefits. But when tragedy strikes, the line between real and pretend begins to blur.",
                     "Elizabeth Allen Rosenbaum",List.of(cast,cast1));
             movieRepository.saveAll(List.of(movie));
         };
