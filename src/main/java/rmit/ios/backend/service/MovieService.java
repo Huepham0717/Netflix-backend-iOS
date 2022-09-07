@@ -14,6 +14,7 @@ import java.util.*;
 public class MovieService {
     @Autowired
     private MovieRepository movieRepository;
+
     public Set<Movie> getMovies() {
         return movieRepository.getAll();
     }
@@ -25,4 +26,5 @@ public class MovieService {
                 .comparing(Movie::getRating).reversed());
         return movieList;
     }
+
 }

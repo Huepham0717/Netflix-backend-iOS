@@ -1,6 +1,7 @@
 package rmit.ios.backend.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -36,7 +38,7 @@ public class Movie {
     private double rating;
     private String description;
     private String creator;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "Movie_Casts",
             joinColumns = { @JoinColumn(name = "movie_id") },
@@ -44,13 +46,17 @@ public class Movie {
     )
     private List<Cast> castList;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany()
     @JoinTable(
             name = "Movie_Gener",
             joinColumns = { @JoinColumn(name = "movie_id") },
             inverseJoinColumns = { @JoinColumn(name = "gener_id")}
     )
     private List<Genre> genreList;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "movieList")
+    private List<User> userList = new ArrayList<>();
 
     public Movie(String title, String publishedDate, String categories, String youtubeID, String imageName, double rating, String description, String creator, List<Cast> castList, List<Genre> genreList) {
         this.title = title;

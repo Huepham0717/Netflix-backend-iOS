@@ -31,9 +31,17 @@ public class User {
     private Long userId;
     private String userName;
     private String password;
+    @JsonIgnore
+    @JsonManagedReference
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "Users_Movie",
+            joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "movie_id")}
+    )
+    private List<Movie> movieList;
 
-    public User(String userName, String password) {
+    public User(String userName) {
         this.userName = userName;
-        this.password = password;
     }
 }

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>rmit.ios.backend.entity</OriginalElement>
+  <nodes>
+    <node x="98.5" y="185.0">rmit.ios.backend.entity.Movie</node>
+    <node x="113.96271929824564" y="536.0">rmit.ios.backend.entity.Cast</node>
+    <node x="103.71271929824564" y="709.0">rmit.ios.backend.entity.Config</node>
+    <node x="0.0" y="11.0">rmit.ios.backend.entity.Genre</node>
+    <node x="208.0" y="0.0">rmit.ios.backend.entity.User</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="rmit.ios.backend.entity.Config" target="rmit.ios.backend.entity.Cast" relationship="CREATE">
+      <point x="13.0" y="-15.0" />
+      <point x="168.71271929824564" y="678.0" />
+      <point x="207.96271929824564" y="678.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="rmit.ios.backend.entity.Movie" target="rmit.ios.backend.entity.Cast" relationship="DEPENDENCY">
+      <point x="-23.5" y="148.5" />
+      <point x="169.0" y="509.0" />
+      <point x="145.29605263157902" y="509.0" />
+      <point x="-62.66666666666663" y="-60.5" />
+    </edge>
+    <edge source="rmit.ios.backend.entity.Config" target="rmit.ios.backend.entity.Movie" relationship="CREATE">
+      <point x="-13.0" y="-15.0" />
+      <point x="142.71271929824564" y="678.0" />
+      <point x="98.48245614035088" y="678.0" />
+      <point x="98.48245614035088" y="509.0" />
+      <point x="122.0" y="509.0" />
+      <point x="-70.5" y="148.5" />
+    </edge>
+    <edge source="rmit.ios.backend.entity.Movie" target="rmit.ios.backend.entity.Genre" relationship="DEPENDENCY">
+      <point x="-70.5" y="-148.5" />
+      <point x="122.0" y="163.0" />
+      <point x="75.98026315789475" y="163.0" />
+      <point x="75.98026315789475" y="153.0" />
+      <point x="31.333333333333314" y="153.0" />
+      <point x="-62.666666666666686" y="49.5" />
+    </edge>
+    <edge source="rmit.ios.backend.entity.Cast" target="rmit.ios.backend.entity.Movie" relationship="TO_MANY">
+      <point x="0.0" y="-60.5" />
+      <point x="207.96271929824564" y="509.0" />
+      <point x="216.0" y="509.0" />
+      <point x="23.5" y="148.5" />
+    </edge>
+    <edge source="rmit.ios.backend.entity.Movie" target="rmit.ios.backend.entity.Cast" relationship="TO_MANY">
+      <point x="70.5" y="148.5" />
+      <point x="263.0" y="509.0" />
+      <point x="270.62938596491233" y="509.0" />
+      <point x="62.666666666666686" y="-60.5" />
+    </edge>
+    <edge source="rmit.ios.backend.entity.Movie" target="rmit.ios.backend.entity.Genre" relationship="TO_MANY">
+      <point x="-23.5" y="-148.5" />
+      <point x="169.0" y="153.0" />
+      <point x="94.0" y="153.0" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="rmit.ios.backend.entity.Genre" target="rmit.ios.backend.entity.Movie" relationship="TO_MANY">
+      <point x="62.66666666666663" y="49.5" />
+      <point x="156.66666666666663" y="143.0" />
+      <point x="196.21271929824564" y="143.0" />
+      <point x="196.21271929824564" y="163.0" />
+      <point x="216.0" y="163.0" />
+      <point x="23.5" y="-148.5" />
+    </edge>
+    <edge source="rmit.ios.backend.entity.Config" target="rmit.ios.backend.entity.Genre" relationship="CREATE">
+      <point x="-39.0" y="-15.0" />
+      <point x="116.71271929824564" y="688.0" />
+      <point x="75.98026315789475" y="688.0" />
+      <point x="75.98026315789475" y="153.0" />
+      <point x="31.333333333333314" y="153.0" />
+      <point x="-62.666666666666686" y="49.5" />
+    </edge>
+    <edge source="rmit.ios.backend.entity.User" target="rmit.ios.backend.entity.Movie" relationship="TO_MANY">
+      <point x="-62.666666666666664" y="60.5" />
+      <point x="239.33333333333334" y="143.0" />
+      <point x="196.21271929824564" y="143.0" />
+      <point x="196.21271929824564" y="163.0" />
+      <point x="216.0" y="163.0" />
+      <point x="23.5" y="-148.5" />
+    </edge>
+    <edge source="rmit.ios.backend.entity.Movie" target="rmit.ios.backend.entity.User" relationship="TO_MANY">
+      <point x="70.5" y="-148.5" />
+      <point x="263.0" y="163.0" />
+      <point x="302.0" y="163.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="rmit.ios.backend.entity.Config" target="rmit.ios.backend.entity.User" relationship="CREATE">
+      <point x="39.0" y="-15.0" />
+      <point x="194.71271929824564" y="688.0" />
+      <point x="312.46271929824564" y="688.0" />
+      <point x="312.46271929824564" y="163.0" />
+      <point x="364.66666666666663" y="163.0" />
+      <point x="62.66666666666666" y="60.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.5499999999999999" showDependencies="true" x="111.0" y="240.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
