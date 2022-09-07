@@ -36,4 +36,8 @@ public class MovieController {
     public Optional<Movie> loadMovieByMovieName(@PathVariable("movieName") String movieName) {
         return movieRepository.findByMovieName(movieName);
     }
+    @GetMapping(path = "popularMovies")
+    public List<Movie> loadPopularMovie() {
+        return movieService.getPopularMovies();
+    }
 }

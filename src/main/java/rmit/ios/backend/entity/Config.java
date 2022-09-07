@@ -24,7 +24,9 @@ public class Config {
             genreRepository.saveAll(List.of(genre, genre1));
             Movie movie = new Movie("Purple Hearts","July 29, 2022","Drama","WTLgg8oRSBE","Purple-Hearts",6.7,"In spite of their many differences, Cassie, a struggling singer-songwriter, and Luke, a troubled Marine, agree to marry solely for military benefits. But when tragedy strikes, the line between real and pretend begins to blur.",
                     "Elizabeth Allen Rosenbaum",List.of(cast,cast1), List.of(genre,genre1));
-            movieRepository.saveAll(List.of(movie));
+            Movie movie1 = new Movie("Purple Hearts","July 29, 2022","Drama","WTLgg8oRSBE","Purple-Hearts",7.7,"In spite of their many differences, Cassie, a struggling singer-songwriter, and Luke, a troubled Marine, agree to marry solely for military benefits. But when tragedy strikes, the line between real and pretend begins to blur.",
+                    "Elizabeth Allen Rosenbaum",List.of(cast,cast1), List.of(genre,genre1));
+            movieRepository.saveAll(List.of(movie,movie1));
         };
     }
 }
