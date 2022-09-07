@@ -1,6 +1,7 @@
 package rmit.ios.backend.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,27 +16,25 @@ import java.util.List;
 @EqualsAndHashCode
 @NoArgsConstructor
 @Entity
-@Table(name = "casts",uniqueConstraints={@UniqueConstraint(columnNames ={"castId"})})
-public class Cast {
+@Table(name = "genre",uniqueConstraints={@UniqueConstraint(columnNames ={"genreId"})})
+public class Genre {
     @SequenceGenerator(
-            name = "cast_sequence",
-            sequenceName = "cast_sequence",
+            name = "genre_sequence",
+            sequenceName = "genre_sequence",
             allocationSize = 1
     )
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "cast_sequence"
+            generator = "genre_sequence"
     )
-    private Long castId;
-    private String castName;
-    private String castImage;
+    private Long genreId;
+    private String genreName;
     @JsonIgnore
-    @ManyToMany(mappedBy = "castList")
+    @ManyToMany(mappedBy = "genreList")
     private List<Movie> movieList = new ArrayList<>();
 
-    public Cast(String castName, String castImage) {
-        this.castName = castName;
-        this.castImage = castImage;
+    public Genre(String genreName) {
+        this.genreName = genreName;
     }
 }

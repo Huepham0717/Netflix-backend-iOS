@@ -1,6 +1,7 @@
 package rmit.ios.backend.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,7 +44,15 @@ public class Movie {
     )
     private List<Cast> castList;
 
-    public Movie(String title, String publishedDate, String categories, String youtubeID, String imageName, double rating, String description, String creator, List<Cast> castList) {
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "Movie_Gener",
+            joinColumns = { @JoinColumn(name = "movie_id") },
+            inverseJoinColumns = { @JoinColumn(name = "gener_id")}
+    )
+    private List<Genre> genreList;
+
+    public Movie(String title, String publishedDate, String categories, String youtubeID, String imageName, double rating, String description, String creator, List<Cast> castList, List<Genre> genreList) {
         this.title = title;
         this.publishedDate = publishedDate;
         this.categories = categories;
@@ -53,5 +62,6 @@ public class Movie {
         this.description = description;
         this.creator = creator;
         this.castList = castList;
+        this.genreList = genreList;
     }
 }
