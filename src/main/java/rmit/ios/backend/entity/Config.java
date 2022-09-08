@@ -227,9 +227,7 @@ public class Config {
 
             // Category: Adventure
 
-            movieRepository.saveAll(List.of(
-                    movie, movie1, movie2, movie3, movie3, movie4, movie5, movie6, movie7, movie8, movie9,
-                    movie10, movie11));
+            movieRepository.saveAll(List.of(movie, movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10, movie11));
         };
     }
 }

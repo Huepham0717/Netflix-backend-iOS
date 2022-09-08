@@ -36,6 +36,7 @@ public class Movie {
     private String youtubeID;
     private String imageName;
     private double rating;
+    @Column(length=5000)
     private String description;
     private String creator;
     @ManyToMany(fetch = FetchType.EAGER)
