@@ -48,15 +48,11 @@ public class Movie {
 
     @ManyToMany()
     @JoinTable(
-            name = "Movie_Gener",
+            name = "Movie_Genre",
             joinColumns = { @JoinColumn(name = "movie_id") },
             inverseJoinColumns = { @JoinColumn(name = "gener_id")}
     )
     private List<Genre> genreList;
-
-    @JsonIgnore
-    @ManyToMany(mappedBy = "movieList")
-    private List<User> userList = new ArrayList<>();
 
     public Movie(String title, String publishedDate, String categories, String youtubeID, String imageName, double rating, String description, String creator, List<Cast> castList, List<Genre> genreList) {
         this.title = title;

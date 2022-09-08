@@ -17,13 +17,10 @@ import java.util.Optional;
 public class CastController {
     @Autowired
     private final CastRepository castRepository;
-    @Autowired
-    private final CastService castService;
 
     @Autowired
-    public CastController( CastRepository castRepository, CastService castService){
+    public CastController( CastRepository castRepository){
         this.castRepository = castRepository;
-        this.castService = castService;
     }
 
     @GetMapping(path = "castName/{castName}")

@@ -1,5 +1,6 @@
 package rmit.ios.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
@@ -16,25 +17,31 @@ import java.util.List;
 @EqualsAndHashCode
 @NoArgsConstructor
 @Entity
-@Table(name = "users",uniqueConstraints={@UniqueConstraint(columnNames ={"userId"})})
-public class User {
+@Table(name = "saveList")
+public class SaveList {
     @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
+            name = "saveList_sequence",
+            sequenceName = "saveList_sequence",
             allocationSize = 1
     )
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
+            generator = "saveList_sequence"
     )
-    private Long userId;
-    private String userName;
-    @JsonIgnore
+    private Long saveListId;
     @JsonManagedReference
-    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
-    private List<SaveList> saveList = new ArrayList<>();
-    public User(String userName) {
-        this.userName = userName;
+    @ManyToOne
+    @JoinColumn(nullable = false,name = "movieId")
+    private Movie movie;
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(nullable = false,name = "userId")
+    private User user;
+
+    public SaveList(Movie movie, User user) {
+        this.movie = movie;
+        this.user = user;
     }
 }
+
