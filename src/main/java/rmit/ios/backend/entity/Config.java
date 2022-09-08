@@ -12,8 +12,10 @@ import rmit.ios.backend.repository.*;
 @Configuration
 public class Config {
     @Bean
+
     CommandLineRunner commandLineRunner(UserRepository userRepository, CastRepository castRepository,
             MovieRepository movieRepository, GenreRepository genreRepository) {
+
         return args -> {
             User user = new User("huepham1707");
             userRepository.saveAll(List.of(user));
