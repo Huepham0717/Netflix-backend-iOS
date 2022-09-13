@@ -142,7 +142,7 @@ public class Config {
 			Cast cast104 = new Cast("Zach Woods", "zach-woods");
 
 			castRepository.saveAll(List.of(
-					cast1, cast2, cast3, cast4, cast5, cast6, cast7, cast8, cast9, cast10,
+					cast, cast1, cast2, cast3, cast4, cast5, cast6, cast7, cast8, cast9, cast10,
 					cast11, cast12, cast13, cast14, cast15, cast16, cast17, cast18, cast19, cast20,
 					cast21, cast22, cast23, cast24, cast25, cast26, cast27, cast28, cast29, cast30,
 					cast31, cast32, cast33, cast34, cast35, cast36, cast37, cast38, cast39, cast40,
@@ -173,7 +173,7 @@ public class Config {
 			genreRepository.saveAll(List.of(
 					genre, genre1, genre2, genre3, genre4,
 					genre5, genre6, genre7, genre8, genre9,
-					genre10, genre11, genre12, genre13));
+					genre10, genre11, genre12, genre13, genre14));
 
 			// Category 1: Action
 			Movie movie1 = new Movie(
